@@ -56,16 +56,12 @@
         const faceCanvas = faceapi.createCanvasFromMedia(image);
         const ctx = faceCanvas.getContext('2d');
 
-        faceCanvas.width = width * 2;
-        faceCanvas.height = height * 2;
+        faceCanvas.width = 200;//width;
+        faceCanvas.height = 200;//height;
         ctx.drawImage(image, x, y, width, height, 0, 0, faceCanvas.width, faceCanvas.height);
-
         container.appendChild(faceCanvas);
-
         return faceCanvas;
       });
-
-      faceCanvases.forEach(canvas => faceapi.draw.drawFaceLandmarks(canvas, faceapi.resizeResults(detections)));
     }
   </script>
 </body>
